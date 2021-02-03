@@ -29,18 +29,13 @@ class CurrencyController extends Controller
     public function filter()
     {
         $backendItemsPerPage = Settings::getValue('backend_items_per_page', CheckValueType::cvtInteger, 20);
-//        \Log::info(  varDump($backendItemsPerPage, ' -1 $backendItemsPerPage::') );
 
         $this->page    = !empty($this->requestData['page']) ? $this->requestData['page'] : '';
-//        \Log::info(  varDump($this->page, ' -2 $this->page::') );
         $this->filterIsTop     = !empty($this->requestData['filterIsTop']) ? $this->requestData['filterIsTop'] : '';
-//        \Log::info(  varDump($this->filterIsTop, ' -1 $this->filterIsTop::') );
 
         $this->filterActive     = isset($this->requestData['filterActive']) ? $this->requestData['filterActive'] : '';
-//        \Log::info(  varDump($this->filterActive, ' -1 $this->filterActive::') );
 
         $this->filterName     = isset($this->requestData['filterName']) ? $this->requestData['filterName'] : '';
-//        \Log::info(  varDump($this->filterName, ' -1 $this->filterName::') );
 
         $this->orderBy        = !empty($this->requestData['orderBy']) ? $this->requestData['orderBy'] : 'ordering';
         $this->orderDirection = !empty($this->requestData['orderDirection']) ? $this->requestData['orderDirection'] : 'desc';
@@ -72,7 +67,6 @@ class CurrencyController extends Controller
         if (empty($currency->ordering)) {
             $currency->ordering= Currency::max('ordering') + 1;
         }
-        \Log::info(  varDump($this->requestData, ' -1 Currency $this->requestData::') );
 
         $currencies = Currency
             ::orderBy('id', 'asc')
@@ -108,7 +102,6 @@ class CurrencyController extends Controller
             ->withCount('currencyHistories')
             ->first();
 
-        \Log::info(  varDump($currency, ' -1 CurrencyController show $currency::') );
         if ($currency === null) {
             return response()->json([
                 'message'    => 'Currency # "' . $id . '" not found!',
@@ -119,7 +112,7 @@ class CurrencyController extends Controller
 //        $currency->num_code = '';
 //        $currency->ordering = '';
 //        $currency->active = '';
-        \Log::info(  varDump($currency, ' -3 CurrencyController show $currency::') );
+//        \Log::info(  varDump($currency, ' -3 CurrencyController show $currency::') );
         return $currency;
     }
 

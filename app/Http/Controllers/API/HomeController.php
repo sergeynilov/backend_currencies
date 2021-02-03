@@ -38,7 +38,7 @@ class HomeController extends Controller
                     ::orderBy('ordering', 'asc')
                     ->get()
                     ->map(function ($item) {
-                        return ['code' => $item->ordering, 'label' => "Before '" . $item->ordering . '=>' . $item->name . "'"];
+                        return ['code' => $item->ordering, 'label' => /* "Before '" . $item->ordering . '=>' .  */$item->name /*. "'"*/];
                     })
                     ->all();
                 $retArray['currencyOrderingLabels'][]= ['code' => -1, 'label' => ' -Last currency- ' ];

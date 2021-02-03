@@ -39,18 +39,18 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
 //        sleep(3);
-        \Log::info('LOGIN +1 $credentials ::');
-        \Log::info(print_r($credentials, true));
+//        \Log::info('LOGIN +1 $credentials ::');
+//        \Log::info(print_r($credentials, true));
 
         if ($token = $this->guard('api')->attempt($credentials /*,['exp' => \Carbon\Carbon::now()->addHours(4)->timestamp]*/)) {
             $loggedUser = $this->guard('api')->user();
 
-            \Log::info('LOGIN +2 $loggedUser ::');
-            \Log::info($loggedUser);
-
-            \Log::info('LOGIN +3 ::');
-            \Log::info('$ $token');
-            \Log::info(print_r($token, true));
+//            \Log::info('LOGIN +2 $loggedUser ::');
+//            \Log::info($loggedUser);
+//
+//            \Log::info('LOGIN +3 ::');
+//            \Log::info('$ $token');
+//            \Log::info(print_r($token, true));
 
             return $this->respondWithToken($token);
         }
@@ -94,8 +94,8 @@ class AuthController extends Controller
     {
         $request     = request();
         $requestData = $request->all();
-        \Log::info('00 register $requestData::');
-        \Log::info(print_r($requestData, true));
+//        \Log::info('00 register $requestData::');
+//        \Log::info(print_r($requestData, true));
 
 
         $validator = Validator::make($requestData, [

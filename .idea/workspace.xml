@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4a95a4f-39b3-4dad-a351-330c32a5f015" name="Default Changelist" comment="" />
+    <list default="true" id="c4a95a4f-39b3-4dad-a351-330c32a5f015" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/CurrencyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/CurrencyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/LaravelLoggerActivityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/Admin/LaravelLoggerActivityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/JwtMiddleware.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Settings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/library/helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/library/helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +25,9 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="NamedScopeManager">
     <scope name="App" pattern="(file[backend_currencies]:app//*||file[backend_currencies]:config//*||file[backend_currencies]:bootstrap//*||file[backend_currencies]:resources/css//*||file[backend_currencies]:resources/js//*||file[backend_currencies]:resources/lang//*||file[backend_currencies]:resources/views//*||file[backend_currencies]:routes//*)&amp;&amp;!file[backend_currencies]:bootstrap/cache//*" />
@@ -137,6 +152,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1lNYJEKjvBuq35dsNWP2sPO88S7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/vendor/jeremykenedy/laravel-logger/src/database/migrations/2017_11_04_103444_create_laravel_logger_activity_table.php" />
@@ -207,11 +223,27 @@
       <workItem from="1612176379433" duration="4896000" />
       <workItem from="1612184332212" duration="599000" />
       <workItem from="1612240152655" duration="7526000" />
-      <workItem from="1612262579578" duration="3268000" />
+      <workItem from="1612262579578" duration="3866000" />
+      <workItem from="1612284207628" duration="1324000" />
+      <workItem from="1612328314817" duration="4822000" />
+      <workItem from="1612354055766" duration="1313000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

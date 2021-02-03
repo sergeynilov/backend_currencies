@@ -31,18 +31,12 @@ class LaravelLoggerActivityController extends Controller
 
     public function filter()
     {
-        \Log::info( '-1 LaravelLoggerActivityController.index ::' . print_r( -1, true  ) );
-
-        $backendItemsPerPage = 2;// Settings::getValue('backend_items_per_page', CheckValueType::cvtInteger, 20);
-        \Log::info(  varDump($backendItemsPerPage, ' -1 $backendItemsPerPage::') );
+        $backendItemsPerPage = Settings::getValue('backend_items_per_page', CheckValueType::cvtInteger, 20);
 
         $this->page    = !empty($this->requestData['page']) ? $this->requestData['page'] : '';
-        \Log::info(  varDump($this->page, ' -2 $this->page::') );
         $this->filterName     = !empty($this->requestData['filterName']) ? $this->requestData['filterName'] : '';
-//        \Log::info(  varDump($this->filterName, ' -1 $this->filterName::') );
 
         $this->filterPublished     = isset($this->requestData['filterPublished']) ? $this->requestData['filterPublished'] : '';
-//        \Log::info(  varDump($this->filterPublished, ' -1 $this->filterPublished::') );
 
         $this->orderBy        = !empty($this->requestData['orderBy']) ? $this->requestData['orderBy'] : 'ordering';
         $this->orderDirection = !empty($this->requestData['orderDirection']) ? $this->requestData['orderDirection'] : 'asc';
@@ -64,7 +58,6 @@ class LaravelLoggerActivityController extends Controller
             ->with('creator')
             ->first();
 
-        \Log::info(  varDump($laravelLoggerActivity, ' -1 LaravelLoggerActivityController show $laravelLoggerActivity::') );
         if ($laravelLoggerActivity === null) {
             return response()->json([
                 'message'    => 'Import log # "' . $id . '" not found!',
@@ -72,13 +65,11 @@ class LaravelLoggerActivityController extends Controller
             ], HTTP_RESPONSE_NOT_FOUND);
         }
 
-        \Log::info(  varDump($laravelLoggerActivity, ' -3 LaravelLoggerActivityController show $laravelLoggerActivity::') );
         return $laravelLoggerActivity;
     }
 
     public function destroy($laravelLoggerActivityId)
     {
-        \Log::info(  varDump($laravelLoggerActivityId, ' -1 $laravelLoggerActivityId::') );
         $laravelLoggerActivity = Activity::find($laravelLoggerActivityId);
         if ($laravelLoggerActivity === null) {
             return response()->json([

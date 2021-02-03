@@ -1,12 +1,9 @@
 <?php
 
-use App\Settings;
-use App\UserGroup;
+use App\Models\Settings;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
-use Intervention\Image\Facades\Image as Image;
-//use ImageOptimizer;
 
 
 
@@ -100,7 +97,7 @@ if ( !function_exists('objectIntoArray')) {
     function objectIntoArray($obj): array
     {
         $array = json_decode(json_encode($obj), true);
-        \Log::info(  varDump($array, ' -1 objectIntoArray $array::') );
+//        \Log::info(  varDump($array, ' -1 objectIntoArray $array::') );
         return $array;
     }
 } // if ( !function_exists('objectIntoArray')) {
@@ -142,32 +139,6 @@ if ( !function_exists('getValueLabelKeys')) {
         return trimRightSubString($ret_str, ',');
     }
 } // if ( !function_exists('getValueLabelKeys')) {
-
-
-if ( !function_exists('checkUserGroup')) {
-    function checkUserGroup(array $checkRoles)
-    {
-        $loggedUser      = Auth::guard('api')->user();
-        \Log::info(  varDump($loggedUser, ' -1 $loggedUser::') );
-          \Log::info('checkUserGroup $loggedUser->id::');
-            \Log::info(print_r(  (!empty($loggedUser->id)??'user not defined'), true  ));
-
-        if(empty($loggedUser)) {
-            \Log::info('$loggedUser NOT DEFINED');
-            return false;
-        }
-        $userGroupsCount = UserGroup
-            ::getByUserId($loggedUser->id)
-            ->getByGroupId($checkRoles)
-            ->count();
-        \Log::info(  varDump($userGroupsCount, ' -$userGroupsCount $::') );
-        if ($userGroupsCount == 0) {
-            return false;
-        }
-
-        return true;
-    }
-} // if ( ! function_exists('checkUserGroup')) {
 
 if ( ! function_exists('generateRandomString')) {
     function generateRandomString($length = 10) {
@@ -234,11 +205,9 @@ if ( ! function_exists('prefixHttpProtocol')) {
 if ( ! function_exists('addWatermarkToImage')) {
     function addWatermarkToImage(string $source_file_path): bool
     {
-        \Log::info( '-1 addWatermarkToImage $source_file_path::' . print_r(  $source_file_path, true  ) );
-
         $watermark_path= public_path('/images/hostels_brand_small.jpg');
         if(!file_exists($watermark_path)) {
-            \Log::info( '-1 $ ::' . print_r(  'WATERMARK FILE NOT FOUND!', true  ) );
+//            \Log::info( '-1 $ ::' . print_r(  'WATERMARK FILE NOT FOUND!', true  ) );
             return false;
         }
 

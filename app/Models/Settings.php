@@ -65,8 +65,9 @@ class Settings extends Model
     public static function getValidationRulesArray(): array
     {
         $returnValidationRules = [
-            'items_per_page'         => 'required|integer',
+//            'items_per_page'         => 'required|integer',
             'backend_items_per_page' => 'required|integer',
+            'rate_decimal_numbers'   => 'required|integer|min:1|max:12',
             'base_currency'          => 'required',
         ];
 
